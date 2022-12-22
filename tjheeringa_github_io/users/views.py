@@ -50,8 +50,8 @@ user_redirect_view = UserRedirectView.as_view()
 
 
 class HomeView(BuildableTemplateView):
-    template_name = "pages/home.html"
-    build_path = "home.html"
+    template_name = "pages/index.html"
+    build_path = "index.html"
 
 
 home_view = HomeView.as_view()
