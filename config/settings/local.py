@@ -4,7 +4,7 @@ from .base import env
 # GENERAL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#debug
-DEBUG = True
+DEBUG = False
 # https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 SECRET_KEY = env(
     "DJANGO_SECRET_KEY",
@@ -58,3 +58,14 @@ INSTALLED_APPS += ["django_extensions"]  # noqa F405
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+FREEZE_SITE_URL = "http://127.0.0.1:8000"
+FREEZE_FOLLOW_SITEMAP_URLS = False
+FREEZE_BASE_URL = "/"
+
+INSTALLED_APPS += ["bakery"]
+BUILD_DIR = str(ROOT_DIR / "docs")  # noqa
+
+BAKERY_VIEWS = (
+    "tjheeringa_github_io.users.views.HomeView",
+    "tjheeringa_github_io.users.views.AboutView",
+)

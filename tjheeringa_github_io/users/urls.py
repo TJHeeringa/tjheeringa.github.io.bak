@@ -1,14 +1,9 @@
 from django.urls import path
 
-from tjheeringa_github_io.users.views import (
-    user_detail_view,
-    user_redirect_view,
-    user_update_view,
-)
+from tjheeringa_github_io.users.views import about_view, home_view
 
 app_name = "users"
 urlpatterns = [
-    path("~redirect/", view=user_redirect_view, name="redirect"),
-    path("~update/", view=user_update_view, name="update"),
-    path("<str:username>/", view=user_detail_view, name="detail"),
+    path("", home_view, name="home"),
+    path("about/", about_view, name="about"),
 ]

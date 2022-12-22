@@ -1,3 +1,4 @@
+from bakery.views import BuildableTemplateView
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
@@ -46,3 +47,19 @@ class UserRedirectView(LoginRequiredMixin, RedirectView):
 
 
 user_redirect_view = UserRedirectView.as_view()
+
+
+class HomeView(BuildableTemplateView):
+    template_name = "pages/home.html"
+    build_path = "home.html"
+
+
+home_view = HomeView.as_view()
+
+
+class AboutView(BuildableTemplateView):
+    template_name = "pages/about.html"
+    build_path = "about.html"
+
+
+about_view = AboutView.as_view()
